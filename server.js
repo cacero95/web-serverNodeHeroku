@@ -1,6 +1,7 @@
 const express = require('express');
-const hbs = require('hbs');
 const app = express();
+const hbs = require('hbs');
+
 
 require('./hbs/helpers');
 //require('./hbs/helpers'); con esta linea indoco que se ejecute todo lo que hay en ese file
@@ -10,7 +11,7 @@ require('./hbs/helpers');
  * el servidor debe habilitar variables globales
  */
 
-const port = process.env.PORT || 8080; // variable global jajaj esta || es como un o en un if
+const puerto = process.env.PORT || 3000; // variable global jajaj esta || es como un o en un if
 
 
 // express permite crear un middleware donde podemos filtrar las peticiones
@@ -50,6 +51,6 @@ app.get('/about', (req, res) => {
 //    res.send('hola data');
 //});
 // pero app.list tambien recive un callback
-app.listen(8080, () => {
-    console.log(`estoy escuchando por el puerto ${port}`);
+app.listen(puerto, () => {
+    console.log(`estoy escuchando por el port ${puerto}`);
 });
